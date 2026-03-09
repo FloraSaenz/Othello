@@ -1,7 +1,7 @@
 /*Global page styling. This mainly shows up as the background pattern*/
 
 body {
-    background-image: url("../images/flowers.png");;
+    background-image: url("./images/flowers.png");
     text-align: center;
     font-family: Arial;
 }
