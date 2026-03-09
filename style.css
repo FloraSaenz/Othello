@@ -1,0 +1,108 @@
+/*Global page styling. This mainly shows up as the background pattern*/
+
+body {
+    background-image: url("../images/flowers.png");;
+    text-align: center;
+    font-family: Arial;
+}
+
+/*Container for the game and the title. Taken from format of first website.*/
+.content {
+    padding: 40px;
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/*Game board grid*/
+#board {
+    width: 100%;
+    max-width: 480px;
+    aspect-ratio: 1;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    background-color: #A7ABDE;
+}
+
+/*Individual board squares*/
+.square {
+    border: 1px solid black;
+    position: relative;
+}
+
+/*Hover effect*/
+.square:hover {
+    background-color: #4B006E;
+}
+
+/*Format for game pieces*/
+.piece {
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    transition: transform 0.3s;
+}
+
+/*Black pieces*/
+.black {
+    background-color: black;
+}
+
+/*White pieces*/
+.white {
+    background-color: white;
+}
+
+/*Tried to implement but proved unsuccessful, however it does not compromise the existing code*/
+.flip {
+    transform: rotateY(180deg);
+}
+
+/*Modal overlay */
+.modal {
+    display: none; /* hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/*Modal box */
+.modal-content {
+    background-color: white;
+    width: 300px;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    animation: popIn 0.3s ease;
+}
+
+/*Animation for the pop in BUT the most dynamic it got was the hover effect */
+@keyframes popIn {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    margin-top: 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
